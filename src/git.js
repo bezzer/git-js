@@ -1477,7 +1477,8 @@ Please switch to using Git#exec to run arbitrary functions as part of the comman
             return;
          }
 
-         var handler = require('./responses/' + type);
+
+         var handler = require('./responses/')[type];
          var result = handler.parse.apply(handler, [data].concat(args === undefined ? [] : args));
 
          callback(null, result);
